@@ -14,8 +14,5 @@ class AAICharacter : public ACharacterBase
 public:
 
 	AAICharacter();
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Character)
-	class UAIPerceptionComponent *AIPerceptionComponent;
 };
 
