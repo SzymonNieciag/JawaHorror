@@ -14,5 +14,7 @@ class ACharacterBase : public ACharacter
 public:
 
 	ACharacterBase();
+
+
 };
 

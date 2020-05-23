@@ -18,6 +18,9 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = AI)
 	class UAIPerceptionComponent *AIPerceptionComponent;
 
+	class UAISenseConfig_Sight *AISense_Sight;
+	class UAISenseConfig_Hearing *AISense_Hearing;
+
 public:
 
 	virtual void OnPossess(APawn* InPawn) override;
@@ -34,8 +37,10 @@ private:
 
 public:
 
+	UFUNCTION(BlueprintCallable, Category = AIPerception)
 	FGenericTeamId GetGenericTeamId() const override;
 
 	/** Assigns Team Agent to given TeamID */
+	UFUNCTION(BlueprintCallable, Category = AIPerception)
 	virtual void SetGenericTeamId(const FGenericTeamId& TeamID) override;
 };

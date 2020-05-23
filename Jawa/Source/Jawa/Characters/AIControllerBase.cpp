@@ -3,11 +3,14 @@
 
 #include "AIControllerBase.h"
 #include "Perception/AIPerceptionComponent.h"
+#include "Perception/AISenseConfig_Sight.h"
+#include "Perception/AISenseConfig_Hearing.h"
 
 
 AAIControllerBase::AAIControllerBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
 {
 	AIPerceptionComponent = CreateDefaultSubobject<UAIPerceptionComponent>("AIPerceptionComponent");
+	TeamId = FGenericTeamId(1);
 }
 
 void AAIControllerBase::OnPossess(APawn * InPawn)

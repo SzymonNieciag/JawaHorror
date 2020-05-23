@@ -20,7 +20,14 @@ public:
 	APlayerControllerBase();
 
 private: 
+
 	// Implement The Generic Team Interface 
 	FGenericTeamId TeamId;
-	FGenericTeamId GetGenericTeamId() const;
+
+	UFUNCTION(BlueprintCallable, Category = AIPerception)
+	FGenericTeamId GetGenericTeamId() const override;
+
+	/** Assigns Team Agent to given TeamID */
+	UFUNCTION(BlueprintCallable, Category = AIPerception)
+	virtual void SetGenericTeamId(const FGenericTeamId& TeamID) override;
 };
