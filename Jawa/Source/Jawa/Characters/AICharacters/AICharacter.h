@@ -15,6 +15,11 @@ public:
 
 	AAICharacter();
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI|Path")
+	TArray <class AActor*> WayPoints;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI|Path")
+	class AActor* TargetActor;
 
 };
 
