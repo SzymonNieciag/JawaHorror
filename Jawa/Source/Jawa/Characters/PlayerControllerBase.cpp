@@ -17,4 +17,14 @@ FGenericTeamId APlayerControllerBase::GetGenericTeamId() const
 void APlayerControllerBase::SetGenericTeamId(const FGenericTeamId& NewTeamID)
 {
 	TeamId = NewTeamID;
+	const IGenericTeamAgentInterface* TeamAgent = Cast<IGenericTeamAgentInterface>(this);
+	if (TeamAgent)
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("This is an on screen message!"));
+	}
+	else
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("This iasfasfasfassfaasfasfasffasasfsage!"));
+
+	}
 }

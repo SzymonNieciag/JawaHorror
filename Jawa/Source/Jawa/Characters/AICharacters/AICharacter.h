@@ -14,5 +14,7 @@ class AAICharacter : public ACharacterBase
 public:
 
 	AAICharacter();
+
+
 };
 

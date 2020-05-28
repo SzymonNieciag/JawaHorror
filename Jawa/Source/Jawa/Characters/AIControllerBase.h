@@ -43,4 +43,5 @@ public:
 	/** Assigns Team Agent to given TeamID */
 	UFUNCTION(BlueprintCallable, Category = AIPerception)
 	virtual void SetGenericTeamId(const FGenericTeamId& TeamID) override;
+
 };

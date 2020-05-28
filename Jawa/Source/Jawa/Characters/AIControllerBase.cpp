@@ -35,6 +35,10 @@ ETeamAttitude::Type AAIControllerBase::GetTeamAttitudeTowards(const AActor & Oth
 			{
 				return ETeamAttitude::Friendly;
 			}
+			if (OtherTeamID == 255)
+			{
+				return ETeamAttitude::Neutral;
+			}
 			else 
 			{
 				return ETeamAttitude::Hostile;

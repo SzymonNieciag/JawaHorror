@@ -19,6 +19,8 @@ public:
 
 	APlayerControllerBase();
 
+	//void GetPlayerViewPoint(FVector& out_Location, FRotator& out_Rotation) const override;
+
 private: 
 
 	// Implement The Generic Team Interface 
@@ -30,4 +32,5 @@ private:
 	/** Assigns Team Agent to given TeamID */
 	UFUNCTION(BlueprintCallable, Category = AIPerception)
 	virtual void SetGenericTeamId(const FGenericTeamId& TeamID) override;
+
 };
