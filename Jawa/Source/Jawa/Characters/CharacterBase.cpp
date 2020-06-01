@@ -14,8 +14,8 @@ void ACharacterBase::GetActorEyesViewPoint(FVector & out_Location, FRotator & ou
 {
 	Super::GetActorEyesViewPoint(out_Location, out_Rotation);
 	
-	out_Location = GetMesh()->GetSocketLocation("eye");
-	out_Rotation = GetMesh()->GetSocketRotation("eye");
+	out_Location = GetMesh()->GetSocketLocation("Eyes");
+	out_Rotation = GetMesh()->GetSocketRotation("Eyes");
 }
 
 bool ACharacterBase::CanBeSeenFrom(const FVector & ObserverLocation, FVector & OutSeenLocation, int32 & NumberOfLoSChecksPerformed, float & OutSightStrength, const AActor * IgnoreActor) const

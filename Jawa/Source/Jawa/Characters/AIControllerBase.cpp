@@ -5,6 +5,7 @@
 #include "Perception/AIPerceptionComponent.h"
 #include "Perception/AISenseConfig_Sight.h"
 #include "Perception/AISenseConfig_Hearing.h"
+#include "AICharacters/AICharacter.h"
 
 
 AAIControllerBase::AAIControllerBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
@@ -16,6 +17,10 @@ AAIControllerBase::AAIControllerBase(const FObjectInitializer& ObjectInitializer
 void AAIControllerBase::OnPossess(APawn * InPawn)
 {
 	Super::OnPossess(InPawn);
+	if (InPawn)
+	{
+		AICharacter = Cast<AAICharacter>(InPawn);
+	}
 }
 
 void AAIControllerBase::OnMoveCompleted(FAIRequestID RequestID, const FPathFollowingResult & Result)

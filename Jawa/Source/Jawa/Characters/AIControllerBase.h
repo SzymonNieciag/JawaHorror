@@ -6,6 +6,8 @@
 #include "AIController.h"
 #include "AIControllerBase.generated.h"
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSenseAIUpdate);
+
 UCLASS()
 class JAWA_API AAIControllerBase : public AAIController
 {
@@ -18,8 +20,8 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = AI)
 	class UAIPerceptionComponent *AIPerceptionComponent;
 
-	class UAISenseConfig_Sight *AISense_Sight;
-	class UAISenseConfig_Hearing *AISense_Hearing;
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = AI)
+	class AAICharacter *AICharacter;
 
 public:
 
@@ -43,5 +45,8 @@ public:
 	/** Assigns Team Agent to given TeamID */
 	UFUNCTION(BlueprintCallable, Category = AIPerception)
 	virtual void SetGenericTeamId(const FGenericTeamId& TeamID) override;
+
+	UPROPERTY(BlueprintCallable, BlueprintAssignable, Category = "AI")
+	FSenseAIUpdate OnSenseAIUpdated;
 
 };
