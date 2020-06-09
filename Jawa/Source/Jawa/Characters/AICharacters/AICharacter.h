@@ -24,7 +24,7 @@ public:
 	AAICharacter();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Character")
-	TArray <class AActor*> WayPoints;
+	class AActor* AllertPoint;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Character")
 	class AActor* TargetActor;
